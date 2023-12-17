@@ -1,0 +1,31 @@
+test_id,testname
+1,Blood Test
+2,MRI Scan
+3,X-ray
+4,Urinalysis
+5,CT Scan
+6,Biopsy
+7,Ultrasound
+8,Electrocardiogram (ECG)
+9,Colonoscopy
+10,Mammogram
+11,Endoscopy
+12,Pap Smear
+13,Sputum Test
+14,Echocardiogram
+15,Lumbar Puncture
+16,Stool Test
+17,Skin Biopsy
+18,Bone Density Test
+19,EKG Test
+20,Allergy Test
+21,Blood Pressure Test
+22,Glucose Test
+23,Thyroid Test
+24,HIV Test
+25,Liver Function Test
+26,Pregnancy Test
+27,Cholesterol Test
+28,C-Reactive Protein Test
+29,Stress Test
+30,Spirometry
