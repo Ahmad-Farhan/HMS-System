@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="contentPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane id="sideBar" layoutY="60.0" prefHeight="660.0" prefWidth="190.0" style="-fx-background-color: #008080;">
+         <children>
+            <Group layoutX="40.0" layoutY="159.0">
+               <children>
+                  <ImageView fitHeight="70.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Icons/Logout_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="28.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log Out">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="redirectbtn1" layoutY="12.0" mnemonicParsing="false" onAction="#redirectToLogout" opacity="0.0" prefHeight="110.0" prefWidth="110.0" />
+               </children>
+            </Group>
+            <Group layoutX="40.0" layoutY="36.0">
+               <children>
+                  <ImageView fitHeight="70.0" layoutX="20.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Icons/History_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="12.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View History">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="redirectbtn11" layoutY="1.0" mnemonicParsing="false" onAction="#redirectToMedicalHistory" opacity="0.0" prefHeight="110.0" prefWidth="110.0" />
+               </children>
+            </Group>
+         </children></AnchorPane>
+      <AnchorPane id="headerBar" prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: #00008B;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" text="HMS" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="contentScroll" layoutX="190.0" layoutY="60.0" minViewportHeight="660.0" minViewportWidth="1080.0" prefHeight="660.0" prefViewportHeight="660.0" prefViewportWidth="1080.0" prefWidth="1112.0">
+         <content>
+            <Pane id="contentPane" fx:id="mainpanel" prefHeight="660.0" prefWidth="1090.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label fx:id="pageTitle" layoutX="20.0" layoutY="20.0" text="Patient Appointments">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="scheduledAppointments" layoutX="110.0" layoutY="110.0" prefHeight="507.0" prefWidth="870.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="GAINSBORO" height="507.0" stroke="BLACK" strokeType="INSIDE" width="870.0" />
+                        <ComboBox fx:id="comboBox1" layoutX="418.0" layoutY="102.0" onAction="#specialityComboBox" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #FFFFFF;" />
+                        <Label layoutX="156.0" layoutY="102.0" prefHeight="20.0" prefWidth="170.0" text="Choose Specialization">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="156.0" layoutY="180.0" prefHeight="20.0" prefWidth="148.0" text="Choose Doctor">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboBox2" layoutX="418.0" layoutY="177.0" onAction="#DoctorComboBox" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #FFFFFF;" />
+                        <Label layoutX="156.0" layoutY="330.0" text="Choose Time">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboBox4" layoutX="418.0" layoutY="327.0" onAction="#IntervalComboBox" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #FFFFFF;" />
+                        <Button fx:id="button1" layoutX="525.0" layoutY="420.0" mnemonicParsing="false" onAction="#submitButtonClicked" prefHeight="25.0" prefWidth="173.0" style="-fx-background-color: #FFFFFF;" text="Submit" />
+                        <Label layoutX="157.0" layoutY="255.0" prefHeight="25.0" prefWidth="122.0" text="Choose Date">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboBox3" layoutX="418.0" layoutY="252.0" onAction="#DateComboBox" prefHeight="30.0" prefWidth="280.0" style="-fx-background-color: #FFFFFF;" />
+                        <Label fx:id="pageTitle1" layoutX="303.0" layoutY="14.0" text="Schedule Appointments" underline="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="manageAppointments" layoutX="110.0" layoutY="676.0" prefHeight="431.0" prefWidth="870.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="GAINSBORO" height="430.0" stroke="BLACK" strokeType="INSIDE" width="870.0" />
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="259.0" layoutX="30.0" layoutY="143.0" stroke="BLACK" strokeType="INSIDE" width="410.0" />
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="262.0" layoutX="470.0" layoutY="143.0" stroke="BLACK" strokeType="INSIDE" width="370.0" />
+                        <Label fx:id="pageTitle11" layoutX="261.0" layoutY="20.0" text="Cancel/Reschedule Appointments" underline="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="45.0" layoutY="97.0" text="Scheduled Appointments">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="button2" layoutX="269.0" layoutY="92.0" mnemonicParsing="false" onAction="#GetAppointmentsButton" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: #ffffff;" text="Get Appointments">
+                           <opaqueInsets>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </opaqueInsets>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="scheduledAppointmentText" layoutX="51.0" layoutY="185.0" prefHeight="200.0" prefWidth="368.0" text="No Current Appointments" textAlignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="52.0" layoutY="153.0" prefHeight="25.0" prefWidth="366.0" text="No        Interval         Day           Date            Doctor">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="500.0" layoutY="159.0" prefHeight="25.0" prefWidth="190.0" text="Select an Appointment">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboBox5" layoutX="500.0" layoutY="193.0" onAction="#CancelComboBox" prefHeight="30.0" prefWidth="310.0" />
+                        <Button fx:id="button3" layoutX="678.0" layoutY="352.0" mnemonicParsing="false" onAction="#cancelAppointmentButton" prefHeight="25.0" prefWidth="130.0" text="Cancel Appointment" />
+                        <ComboBox fx:id="comboBox6" layoutX="536.0" layoutY="241.0" onAction="#DateCancelComboBox" prefHeight="30.0" prefWidth="117.0" />
+                        <ComboBox fx:id="comboBox7" layoutX="710.0" layoutY="241.0" onAction="#IntervalCancelComboBox" prefHeight="30.0" prefWidth="100.0" />
+                        <Button fx:id="button4" layoutX="498.0" layoutY="352.0" mnemonicParsing="false" onAction="#RescheduleAppointmentButton" prefHeight="25.0" prefWidth="160.0" text="Reschedule Appointment" />
+                        <Label layoutX="500.0" layoutY="245.0" text="Date">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="675.0" layoutY="246.0" text="Time">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Line endX="265.5999755859375" layoutX="152.0" layoutY="185.0" startX="-100.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>

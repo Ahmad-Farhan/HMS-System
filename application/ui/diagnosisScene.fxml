@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="contentPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane id="sideBar" layoutY="60.0" prefHeight="660.0" prefWidth="190.0" style="-fx-background-color: #008080;">
+         <children>
+            <Text fill="WHITE" layoutX="19.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Selection">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="redirectbtn" layoutX="27.0" layoutY="38.0" mnemonicParsing="false" onAction="#redirectToPatientDiagnosis" opacity="0.0" prefHeight="110.0" prefWidth="110.0" />
+         </children></AnchorPane>
+      <AnchorPane id="headerBar" prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: #00008B;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" text="HMS" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="190.0" layoutY="60.0" minViewportHeight="660.0" minViewportWidth="1080.0" prefHeight="778.0" prefViewportHeight="660.0" prefViewportWidth="1080.0" prefWidth="1112.0">
+         <content>
+            <Pane id="contentPane" fx:id="mainpanel" prefHeight="850.0" prefWidth="1090.0" style="-fx-background-color: FFFFFF;">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="TEAL" height="37.0" layoutX="462.0" layoutY="668.0" stroke="BLACK" strokeType="INSIDE" width="223.0" />
+                  <Label layoutX="14.0" layoutY="20.0" text="Patient Diagnosis">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="prescriptionpreview" layoutX="705.0" layoutY="135.0" prefHeight="404.0" prefWidth="370.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Pane fx:id="prescriptionheader" prefHeight="200.0" prefWidth="370.0">
+                           <children>
+                              <Text layoutX="25.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SereneLife" wrappingWidth="128.71185302734375">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="25.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 A.K. Brohi Road, H-11/4, Islamabad   -  032-111-2525" wrappingWidth="328" />
+                              <Line endX="330.0" layoutX="20.0" layoutY="70.0" strokeWidth="2.0" />
+                              <Text layoutX="30.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescription" wrappingWidth="128.71185302734375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="patientnamelbl" layoutX="40.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name:" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="patientinfolbl" layoutX="40.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender/Age:" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="doctornamelbl" layoutX="40.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribed By:" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="datelbl" layoutX="40.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribed On" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Line endX="310.0" layoutX="30.0" layoutY="190.0" strokeWidth="2.0" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="psymptomsPanel" layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <ListView fx:id="symptomslist" layoutX="15.0" layoutY="30.0" prefHeight="10.0" prefWidth="260.0" />
+                              <Text fx:id="symptomsHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identified Symptoms">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font></Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="ptestsPanel" layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <ListView fx:id="testslist" layoutX="15.0" layoutY="30.0" prefHeight="10.0" prefWidth="260.0" />
+                              <Text fx:id="testsHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Tests">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pmedicinesPanel" layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <ListView fx:id="medicineslist" layoutX="15.0" layoutY="30.0" prefHeight="10.0" prefWidth="260.0" />
+                              <Text fx:id="medicinesHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribed Medicines">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="premarksPanel" layoutX="50.0" layoutY="200.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <Text fx:id="remarksHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks:">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="remarksbox" layoutX="15.0" layoutY="30.0" maxWidth="260.0" prefWidth="260.0" textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>                        
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </opaqueInsets>
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </Pane>
+                  <Pane fx:id="prescriptionmaker" layoutX="15.0" layoutY="138.0" prefHeight="530.0" prefWidth="680.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Pane fx:id="symptomsPanel" layoutX="10.0" layoutY="30.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eaeaea" height="130.0" stroke="BLACK" strokeType="INSIDE" width="325.0" />
+                              <ComboBox fx:id="symptomSelector" layoutX="15.0" layoutY="45.0" prefHeight="30.0" prefWidth="295.0" promptText="Select Symptom" style="-fx-background-color: #FFFFFF;" />
+                              <Button fx:id="symptomAdder" layoutX="190.0" layoutY="89.0" mnemonicParsing="false" onAction="#addPrescSymptom" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF;" text="Add Symptom" />
+                              <Text layoutX="15.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identified Symptoms">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="testsPanel" layoutX="345.0" layoutY="30.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eaeaea" height="130.0" stroke="BLACK" strokeType="INSIDE" width="325.0" />
+                              <ComboBox fx:id="testSelector" layoutX="15.0" layoutY="45.0" prefHeight="30.0" prefWidth="295.0" promptText="Select Test" style="-fx-background-color: #FFFFFF;" />
+                              <Button fx:id="testAdder" layoutX="190.0" layoutY="89.0" mnemonicParsing="false" onAction="#addPrescTest" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF;" text="Add Test" />
+                              <Text layoutX="15.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Tests">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="medicinePanel" layoutX="10.0" layoutY="173.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eaeaea" height="210.0" stroke="BLACK" strokeType="INSIDE" width="660.0" />
+                              <Text layoutX="15.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribe Medicine">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <ComboBox fx:id="medicineSelector" layoutX="15.0" layoutY="45.0" prefHeight="30.0" prefWidth="630.0" promptText="Select Medicine" style="-fx-background-color: #FFFFFF;" />
+                              <Button fx:id="medicineAdder" layoutX="526.0" layoutY="171.0" mnemonicParsing="false" onAction="#addPrescMedicine" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF;" text="Add Medicine" />
+                              <Label layoutX="26.0" layoutY="98.0" text="Amount">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="261.0" layoutY="98.0" text="No. of Days">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="amountSelector" layoutX="90.0" layoutY="95.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #FFFFFF;" />
+                              <ComboBox fx:id="durationSelector" layoutX="343.0" layoutY="96.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #FFFFFF;" />
+                              
+                              <CheckBox fx:id="TimingChecks1" layoutX="26.0" layoutY="140.0" mnemonicParsing="false" text="Morning" />
+                              <CheckBox fx:id="TimingChecks2" layoutX="133.0" layoutY="140.0" mnemonicParsing="false" text="Afternoon" />
+                              <CheckBox fx:id="TimingChecks3" layoutX="248.0" layoutY="140.0" mnemonicParsing="false" text="Evening" />
+                              <CheckBox fx:id="TimingChecks4" layoutX="352.0" layoutY="140.0" mnemonicParsing="false" text="Night" />
+                              <Group layoutX="26.0" layoutY="175.0">
+                                 <children>
+                                    
+                                    <RadioButton fx:id="beforem" mnemonicParsing="false" text="Before Meals" />
+                                    <RadioButton fx:id="afterm" layoutX="124.0" mnemonicParsing="false" text="After Meals" />
+                                 </children>
+                              </Group>
+                              
+                           </children>
+                        </Pane>
+                        <Pane fx:id="remarksPanel" layoutX="10.0" layoutY="395.0">
+                           <children>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#eaeaea" height="120.0" stroke="BLACK" strokeType="INSIDE" width="660.0" />
+                              <Text layoutX="15.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="remarksWriter" alignment="TOP_LEFT" layoutX="15.0" layoutY="45.0" prefHeight="60.0" prefWidth="630.0" promptText="Enter Remarks Here" />
+                              <Button fx:id="remarksAdder" layoutX="525.0" layoutY="10.0" mnemonicParsing="false" onAction="#addPrescRemark" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #FFFFFF;" text="Add Remarks" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Text layoutX="28.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnosis">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Pane layoutX="466.0" layoutY="671.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="37.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generate Report">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button mnemonicParsing="false" onAction="#generateReport" opacity="0.0" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #00d41c;" text="Generate Report" />
+                     </children>
+                  </Pane>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </opaqueInsets>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>

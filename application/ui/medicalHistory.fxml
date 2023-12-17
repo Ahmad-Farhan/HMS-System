@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="contentPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane id="sideBar" layoutY="60.0" prefHeight="660.0" prefWidth="190.0" style="-fx-background-color: #008080;">
+         <children>
+            <ImageView fitHeight="110.0" fitWidth="110.0" layoutX="40.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Icons/Diagnose_Icon.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="36.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Diagnosis">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="redirectbtn" layoutX="27.0" layoutY="38.0" mnemonicParsing="false" onAction="#redirectToPatientDiagnosis" opacity="0.0" prefHeight="110.0" prefWidth="110.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="headerBar" prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: #00008B;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" text="HMS" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="contentScroll" layoutX="190.0" layoutY="60.0" minViewportHeight="660.0" minViewportWidth="1080.0" prefHeight="675.0" prefViewportHeight="660.0" prefViewportWidth="1080.0" prefWidth="1112.0">
+         <content>
+            <Pane id="contentPane" fx:id="mainpanel" prefHeight="850.0" prefWidth="1090.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label fx:id="pageTitle" layoutX="20.0" layoutY="20.0" text="Medical History">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="pastAppointments" layoutX="50.0" layoutY="145.0" prefHeight="490.0" prefWidth="580.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <ListView fx:id="appointmentsList" accessibleRole="TITLED_PANE" cache="true" layoutX="5.0" pickOnBounds="false" prefHeight="800.0" prefWidth="583.0" stylesheets="@application.css">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <effect>
+                              <Blend />
+                           </effect></ListView>
+                     </children>
+                  </Pane>
+                  <Text fx:id="activeAppHeader" layoutX="50.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an Appointment">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="prescriptionpreview" layoutX="680.0" layoutY="145.0" prefHeight="480.0" prefWidth="370.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Pane fx:id="prescriptionheader" prefHeight="200.0" prefWidth="370.0">
+                           <children>
+                              <Text layoutX="25.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SereneLife" wrappingWidth="128.71185302734375">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="25.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 A.K. Brohi Road, H-11/4, Islamabad   -  032-111-2525" wrappingWidth="328.7117919921875" />
+                              <Line endX="330.0" layoutX="20.0" layoutY="70.0" strokeWidth="2.0" />
+                              <Text layoutX="30.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescription" wrappingWidth="128.71185302734375">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="patientnamelbl" layoutX="40.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Name:" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="patientinfolbl" layoutX="40.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender/Age:" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="doctornamelbl" layoutX="40.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribed By:" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="datelbl" layoutX="40.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribed On" wrappingWidth="290.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Text>
+                              <Line endX="310.0" layoutX="30.0" layoutY="190.0" strokeWidth="2.0" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="psymptomsPanel" layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <ListView fx:id="symptomslist" layoutX="15.0" layoutY="30.0" prefHeight="10.0" prefWidth="260.0" />
+                              <Text fx:id="symptomsHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identified Symptoms">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="ptestsPanel" layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <ListView fx:id="testslist" layoutX="15.0" layoutY="30.0" prefHeight="10.0" prefWidth="260.0" />
+                              <Text fx:id="testsHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Tests">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pmedicinesPanel" layoutX="40.0" layoutY="190.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <ListView fx:id="medicineslist" layoutX="15.0" layoutY="30.0" prefHeight="10.0" prefWidth="260.0" />
+                              <Text fx:id="medicinesHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescribed Medicines">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="premarksPanel" layoutX="50.0" layoutY="200.0" prefHeight="35.0" prefWidth="290.0" visible="false">
+                           <children>
+                              <Text fx:id="remarksHeader" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks:">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Label fx:id="remarksbox" layoutX="15.0" layoutY="30.0" maxWidth="260.0" prefWidth="260.0" textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </opaqueInsets>
+                  </Pane>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>
